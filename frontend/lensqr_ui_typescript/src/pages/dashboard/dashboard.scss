@@ -1,0 +1,16 @@
+@use "../../styles/variables";
+
+
+
+// .dashboard_container {
+//     background-color: yellow !important;
+// }
+
+// .dashboard_container_header {
+//     background-color: aqua !important;
+// }
+
+.dashboard_container_header, .dashboard_container_body {
+    background-color: variables.$dashboard-bg-color !important;
+    // border: 2px black solid;
+}

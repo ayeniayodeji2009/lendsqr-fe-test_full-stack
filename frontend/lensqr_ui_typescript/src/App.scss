@@ -1,0 +1,10 @@
+@use "./styles/variables";
+
+
+
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: variables.$dashboard-bg-color;
+}

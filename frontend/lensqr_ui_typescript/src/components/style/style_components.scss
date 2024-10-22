@@ -1,0 +1,709 @@
+@use "../../styles/variables";
+
+
+
+
+/* $red: #E4033B; */
+
+
+
+.dashboard_container {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.dashboard_container_header {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid rgb(11, 182, 53); */
+    padding: 5px;
+    margin: 0 auto 5px;
+    width: 100%;
+    /* box-shadow: 20px 20px 10px 24px rgb(112, 152, 165); */
+    box-shadow: 0px 5px 5px gray;
+}
+
+.header_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* border: 1px solid rgb(250, 159, 147); */
+    width: 100%;
+    padding: 0px 20px
+}
+
+.search_container > input {
+    width: 16rem;
+    height: 2rem;
+    border-radius: 5px 0px 0px 5px;
+    border: 2px solid variables.$text-grey;
+    // outline-color: aqua;
+    outline: none
+}
+
+.search_container > input:focus {
+    border: 1px solid variables.$text-grey;
+}
+
+// variables.$text-grey
+
+.search_container > button {
+    background-color: variables.$button-bg-color !important;
+    border-color: variables.$button-bg-color !important;
+    padding: 0.55rem;
+    border-radius: 0px 5px 5px 0px;
+}
+
+
+.header_general, .header_personal {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid black; */
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    background-color: transparent;
+    color: variables.$main-blue-color
+}
+
+.header_general {
+    justify-content: space-between;
+}
+
+.header_personal {
+    justify-content: right;
+    margin: 0px 5px 0px 0px;
+}
+
+/* .mobileview_down {
+    display: none;
+} */
+
+.rep_icon {
+    padding: 27px 0px 0px;
+    margin: 0px 10px;
+    /* border: 1px solid black; */
+}
+
+.profile_pic {
+    border-radius: 50%;
+    margin: 0px;
+}
+
+
+.dashboard_container_body {
+    background-color: rgb(212, 210, 210);
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: row;
+}
+
+// .sidebarOutside_container {
+//     font-size: 250%; 
+//     padding: 0.1rem; 
+//     color: #213F7D
+// }
+
+.sidebarOutside_toggle_btn {
+    font-size: 250%; 
+    padding: 0.1rem; 
+    color: variables.$main-blue-color;
+    margin: 5px 0px 0px 15px
+}
+
+.sidebarInside_container {
+    background-color: white;
+    display: flex;
+    /* justify-content: left; */
+    flex-direction: column;
+    width: 18%;
+    max-height: 71rem;
+    overflow-y: scroll;
+    /* border: 1px solid purple; */
+    padding: 0px;
+    align-items: flex-start;
+}
+
+.sidebarInside_container > * {
+    margin: 7px;
+    padding: 8px;
+    text-align: left;
+    color: variables.$main-blue-color;
+}
+
+/*Select all child except for the first child i.e the X closing icon*/
+.sidebarInside_container > *:hover:not(:first-child) {
+    transition: variables.$transition-time;
+    border-left: 3px solid variables.$link-hover-color;
+    background-color: variables.$link-hover-color-light;
+    width: 91%;
+    font-weight: bold;
+}
+
+.sidebarInside_toggle_btn {
+    font-size: 250%; 
+    padding: 1rem; 
+    padding: 0 5px;
+    height: 20px;
+    margin: 15px;
+    transition: variables.$transition-time;
+    background-color: transparent;
+}
+
+.users_container {
+    background-color: variables.$dashboard-bg-color !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    // border: 1px solid rgb(1, 8, 2); 
+    margin: 0 auto
+}
+
+.users_container_title {
+    display: flex;
+    justify-content: left;
+    /* border: 1px solid rgb(169, 207, 175); */
+    padding: 0px;
+    color: variables.$header-color;
+}
+
+.users_container_title > h1 {
+    /* border: 1px solid rgb(169, 207, 175); */
+    display: flex;
+    justify-content: left;
+}
+
+.users_statistics_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 14rem;
+    margin: 5px auto;
+    /* border: 1px solid rgb(169, 207, 175); */
+    padding: 0rem;
+}
+
+
+/* In media query for mobile view */
+.rep_stats {
+    background-color: white;
+    color: variables.$header-color;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /* border: 1px solid rgb(169, 207, 175); */
+    margin-bottom: 25px;
+    width: 12rem;
+    padding: 10px;
+    align-items: flex-start;
+    border-radius: 7px;
+}
+
+.rep_stats > * {
+    /* border: 1px solid red; */
+    text-align: left;
+}
+
+.user_data_container {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 46rem;
+    margin: 5px auto;
+    /* border: 1px solid rgb(169, 207, 175); */
+    /* padding: 2rem; */
+    padding: 1rem;
+    border-radius: 7px;
+    position: relative;
+    overflow: scroll;
+    /* overflow: auto; */
+    scrollbar-width: none;
+}
+
+table, thead, tbody, th, tr {
+    border: 1px solid white;
+    width: 100%;
+}
+
+thead > tr {
+    color: variables.$text-grey;
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+td, th {
+    padding: 30px;
+    margin: 10px;
+    border-bottom: 1px solid darkgray;
+    background-color: white; /*aqua*/
+}
+
+.table_Header {
+    display: flex;
+    justify-content: center;
+    font-size: 68%;
+    padding: 0px 1px;
+}
+
+.pagination_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 88%;
+    height: 4rem;
+    margin: 5px auto;
+    background-color: variables.$dashboard-bg-color;
+    /* border: 1px solid rgb(169, 207, 175); */
+    padding: 0.5rem;
+}
+
+.pagination_container > * {
+    color: variables.$main-blue-color;
+    font-weight: bold;
+}
+
+.pagination_button, .pagination_button_middle {
+    background-color: variables.$text-grey-light;
+    color: variables.$main-blue-color;
+    // font-weight: bold;
+    margin: 0px 5px;
+    border: 0px solid transparent;
+    padding: 5px;
+}
+
+.pagination_button_middle {
+    background-color: transparent;
+}
+
+#pagination_button_middle_active {
+    background-color: variables.$text-grey-light;
+    font-weight: bolder;
+}
+
+// #pagination_button_middle_active_hover:hover {
+//     background-color: variables.$text-grey-light;
+//     border-radius: 5px;
+//     // font-weight: bolder;
+// }
+
+.pagination_container_right > button:hover {
+    outline: .4px solid variables.$text-grey-light;
+    border-radius: 5px;
+}
+/* .pagination_container_left {
+
+} */
+// npx update-browserslist-db@latest
+// user filter
+.user_filter_container {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    /* align-items: row; */
+    padding: 10px;
+    width: 20%;
+    height: 31rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 32rem; /* adjust as needed */
+    left: 16rem; /* adjust as needed */
+    z-index: 100; /* higher than parent's z-index */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    /* border: 5 solid black; */
+    /* color: rgb(216, 14, 48);
+    background-color: aqua; */
+    /* display: none; */
+}
+
+.user_filter_container > * {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    margin: .3rem;
+    /* border: 1px solid yellow; */
+}
+
+.user_filter_button {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 339px) {
+
+    body {
+        display: none;
+    }
+}
+
+/* Mobile view */
+@media only screen and (min-width: 340px) and (max-width: 1110px) {
+
+    body {
+        font-size: 60%;
+    }
+
+    .header_container {
+        position: relative;
+    }
+
+    .header_general {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .header_personal {
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: -1px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        /* left: 50%;
+        height: 100%; */
+        width: 100%;
+        /* margin: 5px auto 0px; */
+        background: darkgray;
+        /* overflow: hidden;      */
+        /* display: none;  */
+        /* box-shadow: 10px 10px 5px 12px rgb(112, 152, 165); */
+        box-shadow: 0 -5px 5px gray;
+    }
+
+      
+
+    .webview_up {
+        display: none;   
+    }
+
+
+    .sidebarInside_container {
+        max-height: 51rem;
+    }
+
+
+    .sidebarInside_toggle_btn {
+        font-size: 270%;
+    }
+
+    .sidebarInside_container > * {
+        margin: 10px ;
+        /* font-size: 60%; */
+        width: 15%;
+        align-content: left;
+    }
+    
+    .users_statistics_container {
+        display: flex;
+        flex-flow: row wrap;
+        /* justify-content: flex-start; */
+        /* flex-direction: column; */
+        /* flex-wrap: wrap; */
+        width: 100%;
+        height: 5.5rem;
+        margin: 5px auto;
+        /* border: 1px solid rgb(169, 207, 175); */
+        padding: 0rem;
+        /* flex-flow: row wrap; */
+        /* align-content: space-around; */
+    }
+
+    .rep_stats {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        /* border: 1px solid rgb(169, 207, 175); */
+        margin: 0px;
+        width: 4.2rem;
+        height: 5rem;
+        padding: 2.5px 7.5px;
+        align-items: flex-start;
+        border-radius: 7px;
+        /* font-size: 50%; */
+    }
+
+    .rep_stats > * {
+        margin: 2px 0;
+    }
+
+    /* .users_container > table {
+
+    } */
+    .user_data_container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 104%;
+        height: 40rem;
+        margin: 5px auto;
+        /* border: 1px solid rgb(169, 207, 175); */
+        padding: 0.5px;
+        border-radius: 7px;
+        /* overflow: visible; */
+    }
+
+    table, thead, tbody {
+        margin: 0px;
+    }
+
+    th, td {
+        padding: 0.5px;
+        margin: 0px;
+        font-size: 5px;
+    }
+
+    .table_icon_pic {
+        width: 6px;
+    }
+
+    .style_status {
+        padding: 1.5px !important;
+        /* color: black !important */
+    }
+
+
+    .pagination_container {
+        // border: 1px yellow solid;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        height: 4rem;
+        margin: 5px auto;
+        background-color: variables.$dashboard-bg-color;
+        /* border: 1px solid rgb(169, 207, 175); */
+        padding: 0rem;
+    }
+
+
+    // .pagination_container_right {
+    //     // border: 1px red solid
+    // }
+// 
+    /* user filter */
+    .user_filter_container {
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        /* align-items: row; */
+        padding: 10px;
+        width: 33%;
+        height: 18rem;
+        border-radius: 5px;
+        background-color: #fff;
+        position: absolute;
+        top: 17.5rem; /* adjust as needed */
+        left: 6.5rem; /* adjust as needed */
+        z-index: 100; /* higher than parent's z-index */
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        /* border: 5 solid black; */
+        /* color: rgb(216, 14, 48);
+        background-color: aqua; */
+        /* display: none; */
+    }
+
+    .user_filter_container > * {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+        margin: .3rem;
+        /* border: 1px solid yellow; */
+    }
+
+    .user_filter_button {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+
+    /* user option icon */
+    .profile_popup-container {
+        position: absolute;
+        width: 0;
+        top: -1.8rem !important;  /* adjust as needed */ 
+        left: 22rem !important; /* adjust as needed */
+        /* right: 70rem; */
+        z-index: 0; /* higher than parent's z-index */
+        /* border: 5 solid black; */
+        /* color: rgb(216, 14, 48);
+        background-color: aqua; */
+        /* display: none; */
+        padding: 0px;
+        /* border: 5px solid yellow; */
+    }
+
+
+
+
+    .popup-container {
+        position: absolute;
+        width: 0px;
+        top: 0; /* adjust as needed */
+        left: -7rem; /* adjust as needed */
+        z-index: 100; /* higher than parent's z-index */
+        /* border: 5 solid black; */
+        /* color: rgb(216, 14, 48);
+        background-color: aqua; */
+        /* display: none; */
+        padding: 0px;
+        /* border: 5px solid green; */
+    }
+
+    .popup, .profile_popup {
+        /* position: relative;
+        top: auto;
+        left: 50%;
+        width: 5px;
+        padding: 0px;
+        background-color: aqua;
+        /* background-color: #fff; */
+        /*
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border: 5px solid green;
+        margin: 0px auto */
+        display: flex;
+        justify-content: center;
+        /* background-color: aqua;
+        border: 5px solid rgb(0, 2, 128); */
+    }
+    
+    .popup-content, .profile_popup-content {
+        width: 80%;
+        padding: 0px;
+        text-align: center;
+        /* border: 1px solid green; */
+    }
+  }
+
+
+  
+
+  /* Tablet View */
+  /* @media only screen and (min-width: 500px) and (max-width: 1109px) {
+    .profile_popup-container {
+        position: absolute;
+        width: 0;
+        top: -1.8rem !important;  /* adjust as needed 
+        left: 40rem !important; 
+        /* right: 70rem; 
+        z-index: 0; /* higher than parent's z-index 
+        /* border: 5 solid black; */
+        /* color: rgb(216, 14, 48);
+        background-color: aqua; */
+        /* display: none; *
+        padding: 0px;
+        /* border: 5px solid yellow; *
+    }
+  } */
+
+
+  /* Web Browser view */
+  @media only screen and (min-width: 1111px) and (max-width: 2110px) {
+    
+    .mobileview_down {
+        display: none;   
+    }
+
+    table {
+        font-size: 80%;
+    }
+ }
+
+
+ /* CSS for the modal 
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .dialog button {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+  }*/
+  
+  /* dashboard option */
+  .profile_popup-container {
+    position: absolute;
+    top: 5rem; /* adjust as needed */
+    left: 77.2rem; /* adjust as needed */
+    z-index: 10; /* higher than parent's z-index */
+  }
+
+  .popup-container {
+    position: absolute;
+    top: 0; /* adjust as needed */
+    left: -5.8rem; /* adjust as needed */
+    z-index: 10; /* higher than parent's z-index */
+    /* optional styles */
+    /*
+    position: relative;
+    margin-top: 5px;
+    margin-left: -20px; 
+    */
+  }
+
+  
+  
+  .popup, .profile_popup {
+    position: absolute;
+    top: auto;
+    left: 50%;
+    width: 100px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure popup is above other content */
+  }
+
+  
+  .popup-content {
+    color: variables.$main-blue-color;
+    margin: 0px;
+    padding: 15px 5px;
+    width: 100%;
+  } 
+
+
+  .popup-content > p:hover {
+    transition: variables.$transition-time;
+    font-weight: bold;
+    // background-color: variables.$link-hover-color-light;
+  }
+  
+  
+               
+
+  
+
+ /* .profile_popup-content {
+
+ } */

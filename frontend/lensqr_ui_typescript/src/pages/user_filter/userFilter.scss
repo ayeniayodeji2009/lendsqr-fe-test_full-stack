@@ -1,0 +1,128 @@
+@use "../../styles/variables";
+
+
+
+/* user filter */
+.user_filter_container {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    /* align-items: row; */
+    padding: 10px;
+    width: 225px;
+    height: 31rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 32rem; /* adjust as needed */
+    left: 16rem; /* adjust as needed */
+    z-index: 100; /* higher than parent's z-index */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    /* border: 5 solid black; */
+    /* color: rgb(216, 14, 48);
+    background-color: aqua; */
+    /* display: none; */
+}
+
+.user_filter_container form > * {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    margin: .3rem 0px;
+    color: variables.$text-grey
+    /* border: 1px solid yellow; */
+}
+
+.user_filter_container form > input, select {
+    height: 40px;
+    margin: 0px 0px 15px;
+    color: variables.$main-blue-color
+}
+
+div .user_filter_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div .user_filter_button > button {
+    width: 98px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid
+}
+
+#reset_btn {
+    background-color: transparent;
+}
+
+#filter_btn {
+    background-color: variables.$button-bg-color;
+    border-color: variables.$button-bg-color;
+    color: variables.$color-white
+}
+
+#reset_btn:hover, #filter_btn:hover {
+    border: 2px solid;
+    font-weight: bold;
+}
+
+
+
+/* Mobile view */
+@media only screen and (min-width: 340px) and (max-width: 1110px) {
+
+    .user_filter_container {
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        /* align-items: row; */
+        padding: 10px;
+        width: 160px;
+        height: 19.5rem;
+        border-radius: 5px;
+        background-color: #fff;
+        position: absolute;
+        top: 17.5rem; /* adjust as needed */
+        left: 6rem; /* adjust as needed */
+        z-index: 100; /* higher than parent's z-index */
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        /* border: 5 solid black; */
+        /* color: rgb(216, 14, 48);
+        background-color: aqua; */
+        /* display: none; */
+    }
+
+
+    .user_filter_container form > * {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-size: 150%;
+        width: 100%;
+        margin: .3rem 0px;
+        color: variables.$text-grey
+        /* border: 1px solid yellow; */
+    }
+
+
+    .user_filter_container form > input, select {
+        height: 20px;
+        margin: 0px 0px 10px;
+    }
+
+
+    div .user_filter_button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+
+    div .user_filter_button > button {
+        width: 62px;
+        height: 28px;
+        border-radius: 8px;
+        border: 1px solid
+    }
+}

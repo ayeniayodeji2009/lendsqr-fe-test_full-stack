@@ -1,0 +1,93 @@
+@use "../../styles/variables";
+
+
+
+
+.login_container {
+    background-color: rgb(252, 252, 252);
+}
+
+.logo_conainer_header {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    padding: 10px;
+    margin: 4.2rem 0rem 0rem 5rem;
+    /* border: 1px solid black; */
+}
+
+.login_container_body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    /* border: 1px solid black; */
+}
+
+
+.login_form_container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 35%;
+    /* border: 1px solid black; */
+}
+
+.login_form_container > h1, .login_form_container > p {
+    display: flex;
+    justify-content: left;
+}
+
+.login_form_container > h1 {
+    font-size: 2.5rem;
+    color: variables.$header-color;
+}
+
+.login_form_container > p {
+    font-size: 1.2rem;
+    color: variables.$subheader-color
+}
+
+.welcome_pic {
+    margin-top: 2rem;
+}
+
+
+
+/* Mobile view */
+@media only screen and (min-width: 340px) and (max-width: 1110px) {
+.logo_conainer_header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px 5px 5px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.logo_conainer_header > * {
+    margin: 0px auto;
+    // border: 1px blue solid
+}
+
+.login_container_body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // border: 1px brown solid;
+    padding: 5px;
+    // background-color: palevioletred 
+}
+
+.welcome_pic {
+    // border: 2px green solid;
+    margin: 0px auto;
+    width: 5%;
+    height: 5%
+}
+
+.login_form_container {
+    font-size: 160%;
+    width: 50%;
+    margin: auto
+}
+}

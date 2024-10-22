@@ -1,0 +1,55 @@
+@use "../../styles/variables";
+
+
+
+.login_admin_container {
+    background-color: white;
+}
+
+.login_admin_container > input {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 2.5rem;
+    border-color: variables.$text-grey-lighter;
+    border-radius: 5px;
+}
+
+.login_admin_container > input:focus {
+    outline-color: variables.$button-bg-color;
+}
+
+.login_admin_container_forget_password_link, .login_admin_container > p {
+    display: flex;
+    justify-content: left;
+    color: variables.$button-bg-color;
+}
+
+
+.login_admin_container_forget_password_link:hover {
+    font-weight: bolder;
+}
+
+.login_admin_container > button {
+    width: 100%;
+    height: 2.5rem;
+    background-color: variables.$button-bg-color;
+    border-radius: 5px;
+    border-color: variables.$button-bg-color;
+    color: variables.$color-white
+}
+
+.login_admin_container > button:hover {
+    background-color: variables.$link-hover-color-light;
+    color: variables.$button-bg-color;
+    font-weight: bolder;
+    transition: .5s;
+}
+
+
+/*class selection not working, paragragh had to be added to select property to make predecense work*/
+p.login_admin_container_status {
+    display: flex;
+    justify-content: center;
+    // border: red solid 1px
+}
