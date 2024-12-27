@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "backend/lendsqr_backend_server.py", "use": "@vercel/python" },
+      { "src": "frontend/package.json", "use": "@vercel/static-build" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "backend/lendsqr_backend_server.py" },
+      { "src": "/(.*)", "dest": "frontend/$1" } 
+    ]
+}
+  
