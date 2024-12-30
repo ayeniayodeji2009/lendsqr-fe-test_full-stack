@@ -4,6 +4,6 @@
       { "src": "lendsqr_backend_server.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "lendsqr_backend_server.py" }
+      { "src": "/api/(.*)", "dest": "lendsqr_backend_server.py" }
     ]
 }
