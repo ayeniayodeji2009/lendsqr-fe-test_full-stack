@@ -1,4 +1,8 @@
-node_modules/
+*.pyc
+__pycache__/
 venv/
-*.log
+node_modules/
+test/
+docs/
+static/  # If backend doesn't need static files
 .env
