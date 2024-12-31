@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "lensqr_ui_typescript/package.json", "use": "@vercel/static-build" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "lensqr_ui_typescript/$1" }
+    ]
+}
+  
