@@ -1,10 +1,10 @@
 {
     "version": 2,
     "builds": [
-      { "src": "api/lendsqr_backend_server.py", "use": "@vercel/python" }
+      { "src": "api/wsgi.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "api/lendsqr_backend_server.py" }
+      { "src": "/api/(.*)", "dest": "api/wsgi.py" }
     ]
 }
   
