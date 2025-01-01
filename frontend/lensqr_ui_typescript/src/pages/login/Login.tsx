@@ -7,6 +7,7 @@ import "./login.scss"
 
 export default function Login() {
 
+
     return (
         <div className="login_container">
             <div className="logo_conainer_header">

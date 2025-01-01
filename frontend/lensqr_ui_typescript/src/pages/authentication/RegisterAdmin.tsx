@@ -2,6 +2,7 @@ import React, { useEffect, useState, ChangeEvent} from 'react';
 import { useNavigate } from "react-router-dom";
 import Logo from '../../components/Logo';
 import NavBack from '../../components/NavBack';
+import { environ } from "../../context_API/baseURLmode";
 import axios from 'axios';
 
 const RegisterAdmin: React.FC = () => {
@@ -14,9 +15,12 @@ const RegisterAdmin: React.FC = () => {
   const [message, setMessage] = useState<string>('');
   const navigate = useNavigate();
 
+
+
+  console.log(environ.currentBackendAppEnvironmentStatus)
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/register', {
+      const response = await axios.post(`${environ.baseURL}/register`, {
         adminName: adminName,
         password: password,
         email: email,

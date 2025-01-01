@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavBack from '../../components/NavBack';
+import { environ } from '../../context_API/baseURLmode'
 import axios from 'axios';
 
 // Define the type for the customer data
@@ -98,10 +99,12 @@ const CreateUser: React.FC = () => {
     }));
   };
 
+
+  console.log(environ.currentBackendAppEnvironmentStatus)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:5000/api/customers/add', newCustomer);
+      await axios.post(`${environ.baseURL}/customers/add`, newCustomer);
       setNewCustomer({
         customerCode: '',
         picture: '',

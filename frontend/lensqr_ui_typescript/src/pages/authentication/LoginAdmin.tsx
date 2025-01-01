@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { /*BrowserRouter as Router, Route, Link, , Switch, useParams */useNavigate} from "react-router-dom";
 // import { useData } from '../../context_API/DataContext'; //Context API for sharing useSate data Globally
 import axios from 'axios';
+import { environ } from "../../context_API/baseURLmode";
 import "./authentication.scss"
 
 function LoginAdmin() {
@@ -13,9 +14,10 @@ function LoginAdmin() {
   // const { setAdminData } = useData()
 
 
+  console.log(environ.currentBackendAppEnvironmentStatus)
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/login', {
+      const response = await axios.post(`${environ.baseURL}/login`, {
         adminName: adminName,
         password: password
       });

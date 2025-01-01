@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import PopupOption from "./PopupOption";
 import table_icon from "../images/filter-results-button.png";
+import { environ } from '../context_API/baseURLmode'
 import "./style/style_components.scss";
 
 // Define the type for customer data and props
@@ -51,10 +52,12 @@ const UserData: React.FC<UserDataProps> = ({
     const [selectedElement, setSelectedElement] = useState<CustomerData | null>(null);
     const [customersData, setCustomersData] = useState<CustomerData[]>([]);
 
+
+    console.log(environ.currentBackendAppEnvironmentStatus)
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:5000/api/customers', {
+                const response = await axios.get(`${environ.baseURL}/customers`, {
                     params: { page, size, search }
                 });
 

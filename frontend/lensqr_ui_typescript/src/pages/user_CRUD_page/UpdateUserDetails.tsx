@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import Logo from "../../components/Logo";
 import NavBack from '../../components/NavBack';
+import { environ } from '../../context_API/baseURLmode'
 import axios from 'axios';
 
 // Define types for the expected shape of the props
@@ -86,10 +87,13 @@ export default function UpdateUserDetails() {
     updatedUser.personalInfo.fullName = `${updatedUser.personalInfo.firstName} ${updatedUser.personalInfo.lastName}`;
   }
 
+
+
+  console.log(environ.currentBackendAppEnvironmentStatus)
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await axios.put('http://127.0.0.1:5000/api/customers/update', updatedUser);
+      await axios.put(`${environ.baseURL}/customers/update`, updatedUser);
       alert('Successful update user ID ' + updatedUser.id + ' in database');
     } catch (error) {
       console.error('Error updating user:', error);
