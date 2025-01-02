@@ -582,26 +582,73 @@ def get_customers():
 
 
 
-# PUT
+# # PUT
+# def update_customer(customerInfo):
+#     updated_user = {}
+#     try:
+#         conn = get_db_connection()
+#         cur = conn.cursor()
+
+#         cur.execute(
+#             "UPDATE customers SET picture = ?, firstName = ?, lastName = ?, userName = ?, fullName = ?, gender = ?, email = ?, phoneNumber = ?, bvn = ?, maritalStatus = ?, children = ?, resident = ?, eduQualification = ?, employmentStatus = ?, sector = ?, officialEmail = ?, income = ?, loanPayment = ?, durationOfEmployment = ?, twitter = ?, facebook = ?, instagram = ?, guarantor1FullName = ?, guarantor1PhoneNumber = ?, guarantor1Email = ?, guarantor1Relationship = ?, guarantor2FullName = ?, guarantor2PhoneNumber = ?, guarantor2Email = ?, guarantor2Relationship = ?, organization = ?, dateJoined = ?, status = ?, document = ?, bankDetails = ?, loan = ?, saving = ?, tierStar = ?, appAndSystem = ? WHERE customerCode = ? AND id = ?", 
+#             # (customerInfo['firstName'], customerInfo['lastName'], customerInfo['userName'], customerInfo['fullName'], customerInfo['gender'], customerInfo['email'], customerInfo['phoneNumber'], customerInfo['bvn'], customerInfo['maritalStatus'], customerInfo['children'], customerInfo['resident'], customerInfo['eduQualification'], customerInfo['employmentStatus'], customerInfo['sector'], customerInfo['officialEmail'], customerInfo['income'], customerInfo['loanPayment'], customerInfo['durationOfEmployment'], customerInfo['twitter'], customerInfo['facebook'], customerInfo['instagram'], customerInfo['fullName'], customerInfo['phoneNumber'], customerInfo['email'], customerInfo['relationship'], customerInfo['fullName'], customerInfo['phoneNumber'], customerInfo["guarantor2"]['email'], customerInfo["guarantor2"]['relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['id'], customerInfo['customerCode'])
+#             (customerInfo['picture'], customerInfo['firstName'], customerInfo['lastName'], customerInfo['userName'], customerInfo['fullName'], customerInfo['gender'], customerInfo['email'], customerInfo['phoneNumber'], customerInfo['bvn'], customerInfo['maritalStatus'], customerInfo['children'], customerInfo['resident'], customerInfo['eduQualification'], customerInfo['employmentStatus'], customerInfo['sector'], customerInfo['officialEmail'], customerInfo['income'], customerInfo['loanPayment'], customerInfo['durationOfEmployment'], customerInfo['twitter'], customerInfo['facebook'], customerInfo['instagram'], customerInfo['guarantor1FullName'], customerInfo['guarantor1PhoneNumber'], customerInfo['guarantor1Email'], customerInfo['guarantor1Relationship'], customerInfo['guarantor2FullName'], customerInfo['guarantor2PhoneNumber'], customerInfo['guarantor2Email'], customerInfo['guarantor2Relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['customerCode'], customerInfo['id'])
+#             # (customerInfo["personalInfo"]['firstName'], customerInfo["personalInfo"]['lastName'], customerInfo["personalInfo"]['userName'], customerInfo["personalInfo"]['fullName'], customerInfo["personalInfo"]['gender'], customerInfo["personalInfo"]['email'], customerInfo["personalInfo"]['phoneNumber'], customerInfo["personalInfo"]['bvn'], customerInfo["personalInfo"]['maritalStatus'], customerInfo["personalInfo"]['children'], customerInfo["personalInfo"]['resident'], customerInfo["education_and_employment"]['eduQualification'], customerInfo["education_and_employment"]['employmentStatus'], customerInfo["education_and_employment"]['sector'], customerInfo["education_and_employment"]['officialEmail'], customerInfo["education_and_employment"]['income'], customerInfo["education_and_employment"]['loanPayment'], customerInfo["education_and_employment"]['durationOfEmployment'], customerInfo["socialMedia"]['twitter'], customerInfo["socialMedia"]['facebook'], customerInfo["socialMedia"]['instagram'], customerInfo["guarantor1"]['fullName'], customerInfo["guarantor1"]['phoneNumber'], customerInfo["guarantor1"]['email'], customerInfo["guarantor1"]['relationship'], customerInfo["guarantor2"]['fullName'], customerInfo["guarantor2"]['phoneNumber'], customerInfo["guarantor2"]['email'], customerInfo["guarantor2"]['relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['id'], customerInfo['customerCode'])       
+#         )
+        
+#         conn.commit()
+#         # Return the updated user
+#         updated_user = get_customer_by_id(customerInfo["id"])
+#     except sqlite3.Error as e:
+#         print(f"An error occurred: {e}")
+#         conn.rollback()
+#     finally:
+#         conn.close()
+#     return updated_user
+
 def update_customer(customerInfo):
     updated_user = {}
     try:
         conn = get_db_connection()
         cur = conn.cursor()
 
-        cur.execute(
-            "UPDATE customers SET picture = ?, firstName = ?, lastName = ?, userName = ?, fullName = ?, gender = ?, email = ?, phoneNumber = ?, bvn = ?, maritalStatus = ?, children = ?, resident = ?, eduQualification = ?, employmentStatus = ?, sector = ?, officialEmail = ?, income = ?, loanPayment = ?, durationOfEmployment = ?, twitter = ?, facebook = ?, instagram = ?, guarantor1FullName = ?, guarantor1PhoneNumber = ?, guarantor1Email = ?, guarantor1Relationship = ?, guarantor2FullName = ?, guarantor2PhoneNumber = ?, guarantor2Email = ?, guarantor2Relationship = ?, organization = ?, dateJoined = ?, status = ?, document = ?, bankDetails = ?, loan = ?, saving = ?, tierStar = ?, appAndSystem = ? WHERE customerCode = ? AND id = ?", 
-            # (customerInfo['firstName'], customerInfo['lastName'], customerInfo['userName'], customerInfo['fullName'], customerInfo['gender'], customerInfo['email'], customerInfo['phoneNumber'], customerInfo['bvn'], customerInfo['maritalStatus'], customerInfo['children'], customerInfo['resident'], customerInfo['eduQualification'], customerInfo['employmentStatus'], customerInfo['sector'], customerInfo['officialEmail'], customerInfo['income'], customerInfo['loanPayment'], customerInfo['durationOfEmployment'], customerInfo['twitter'], customerInfo['facebook'], customerInfo['instagram'], customerInfo['fullName'], customerInfo['phoneNumber'], customerInfo['email'], customerInfo['relationship'], customerInfo['fullName'], customerInfo['phoneNumber'], customerInfo["guarantor2"]['email'], customerInfo["guarantor2"]['relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['id'], customerInfo['customerCode'])
-            (customerInfo['picture'], customerInfo['firstName'], customerInfo['lastName'], customerInfo['userName'], customerInfo['fullName'], customerInfo['gender'], customerInfo['email'], customerInfo['phoneNumber'], customerInfo['bvn'], customerInfo['maritalStatus'], customerInfo['children'], customerInfo['resident'], customerInfo['eduQualification'], customerInfo['employmentStatus'], customerInfo['sector'], customerInfo['officialEmail'], customerInfo['income'], customerInfo['loanPayment'], customerInfo['durationOfEmployment'], customerInfo['twitter'], customerInfo['facebook'], customerInfo['instagram'], customerInfo['guarantor1FullName'], customerInfo['guarantor1PhoneNumber'], customerInfo['guarantor1Email'], customerInfo['guarantor1Relationship'], customerInfo['guarantor2FullName'], customerInfo['guarantor2PhoneNumber'], customerInfo['guarantor2Email'], customerInfo['guarantor2Relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['customerCode'], customerInfo['id'])
-            # (customerInfo["personalInfo"]['firstName'], customerInfo["personalInfo"]['lastName'], customerInfo["personalInfo"]['userName'], customerInfo["personalInfo"]['fullName'], customerInfo["personalInfo"]['gender'], customerInfo["personalInfo"]['email'], customerInfo["personalInfo"]['phoneNumber'], customerInfo["personalInfo"]['bvn'], customerInfo["personalInfo"]['maritalStatus'], customerInfo["personalInfo"]['children'], customerInfo["personalInfo"]['resident'], customerInfo["education_and_employment"]['eduQualification'], customerInfo["education_and_employment"]['employmentStatus'], customerInfo["education_and_employment"]['sector'], customerInfo["education_and_employment"]['officialEmail'], customerInfo["education_and_employment"]['income'], customerInfo["education_and_employment"]['loanPayment'], customerInfo["education_and_employment"]['durationOfEmployment'], customerInfo["socialMedia"]['twitter'], customerInfo["socialMedia"]['facebook'], customerInfo["socialMedia"]['instagram'], customerInfo["guarantor1"]['fullName'], customerInfo["guarantor1"]['phoneNumber'], customerInfo["guarantor1"]['email'], customerInfo["guarantor1"]['relationship'], customerInfo["guarantor2"]['fullName'], customerInfo["guarantor2"]['phoneNumber'], customerInfo["guarantor2"]['email'], customerInfo["guarantor2"]['relationship'], customerInfo['organization'], customerInfo['dateJoined'], customerInfo['status'], customerInfo['document'], customerInfo['bankDetails'], customerInfo['loan'], customerInfo['saving'], customerInfo['tierStar'], customerInfo['appAndSystem'], customerInfo['id'], customerInfo['customerCode'])       
+        query = """
+        UPDATE customers SET
+        picture = ?, firstName = ?, lastName = ?, userName = ?, fullName = ?, gender = ?, email = ?,
+        phoneNumber = ?, bvn = ?, maritalStatus = ?, children = ?, resident = ?, eduQualification = ?,
+        employmentStatus = ?, sector = ?, officialEmail = ?, income = ?, loanPayment = ?,
+        durationOfEmployment = ?, twitter = ?, facebook = ?, instagram = ?,
+        guarantor1FullName = ?, guarantor1PhoneNumber = ?, guarantor1Email = ?, guarantor1Relationship = ?,
+        guarantor2FullName = ?, guarantor2PhoneNumber = ?, guarantor2Email = ?, guarantor2Relationship = ?,
+        organization = ?, dateJoined = ?, status = ?, document = ?, bankDetails = ?, loan = ?, saving = ?,
+        tierStar = ?, appAndSystem = ?
+        WHERE customerCode = ? AND id = ?
+        """
+        params = (
+            customerInfo.get('picture'), customerInfo.get('firstName'), customerInfo.get('lastName'),
+            customerInfo.get('userName'), customerInfo.get('fullName'), customerInfo.get('gender'),
+            customerInfo.get('email'), customerInfo.get('phoneNumber'), customerInfo.get('bvn'),
+            customerInfo.get('maritalStatus'), customerInfo.get('children'), customerInfo.get('resident'),
+            customerInfo.get('eduQualification'), customerInfo.get('employmentStatus'), customerInfo.get('sector'),
+            customerInfo.get('officialEmail'), customerInfo.get('income'), customerInfo.get('loanPayment'),
+            customerInfo.get('durationOfEmployment'), customerInfo.get('twitter'), customerInfo.get('facebook'),
+            customerInfo.get('instagram'), customerInfo.get('guarantor1FullName'),
+            customerInfo.get('guarantor1PhoneNumber'), customerInfo.get('guarantor1Email'),
+            customerInfo.get('guarantor1Relationship'), customerInfo.get('guarantor2FullName'),
+            customerInfo.get('guarantor2PhoneNumber'), customerInfo.get('guarantor2Email'),
+            customerInfo.get('guarantor2Relationship'), customerInfo.get('organization'),
+            customerInfo.get('dateJoined'), customerInfo.get('status'), customerInfo.get('document'),
+            customerInfo.get('bankDetails'), customerInfo.get('loan'), customerInfo.get('saving'),
+            customerInfo.get('tierStar'), customerInfo.get('appAndSystem'), customerInfo.get('customerCode'),
+            customerInfo.get('id')
         )
-        
+
+        cur.execute(query, params)
         conn.commit()
-        # Return the updated user
-        updated_user = get_customer_by_id(customerInfo["id"])
+        updated_user = {"success": True, "message": "User updated successfully."}
     except sqlite3.Error as e:
-        print(f"An error occurred: {e}")
         conn.rollback()
+        updated_user = {"success": False, "message": str(e)}
     finally:
         conn.close()
     return updated_user
@@ -998,6 +1045,7 @@ def api_update_customer():
     if "id" not in exiting_customer:
         return jsonify({"error": "Customer id is required"}), 400
     return jsonify(update_customer(exiting_customer))
+
 
 @app.route('/api/customers/delete/<customer_id>',  methods = ['DELETE'])
 def api_delete_customer(customer_id):
