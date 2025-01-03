@@ -1,4 +1,4 @@
-from backend.api.tmp.lendsqr_backend_server import app
+from lendsqr_backend_server import app
 import os
 
 
